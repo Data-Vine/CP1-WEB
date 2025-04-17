@@ -1,12 +1,50 @@
 // Questão 1 
 
 let vinho1 = "Angelica Zapata";
-console.log(vinho1)
+console.log(vinho1);
 
 let vinho2 = null;
-console.log(vinho2)
+console.log(vinho2);
 
 let vinho3 = [];
-console.log(vinho3)
+console.log(vinho3);
 
 //Questão 2
+let x = 50;
+let y = 80; 
+if (x >= y) {
+    console.log("X é maior ou igual a Y");
+}
+else if (x <= y) {
+    console.log("X é menor ou igual a Y");
+}
+else {
+    console.log("X é igual de Y");
+}
+y = 510;
+if (x == y) {
+    console.log("X é igual a Y");
+}
+else if (x != y) {
+    console.log("X é diferente de Y");
+}
+
+// Questão 3
+
+
+//Questão 4
+
+
+//Questão 6
+
+
+//Questão 7
+
+
+//Questão 8
+
+
+//Questão 9
+
+
+//Questão 5
