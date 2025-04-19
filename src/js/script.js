@@ -6,28 +6,15 @@ console.log(vinho1);
 let vinho2 = null;
 console.log(vinho2);
 
-let vinho3 = [];
+let vinho3;
 console.log(vinho3);
 
 //Questão 2
 let x = 50;
 let y = 80; 
-if (x >= y) {
-    console.log("X é maior ou igual a Y");
-}
-else if (x <= y) {
-    console.log("X é menor ou igual a Y");
-}
-else {
-    console.log("X é igual de Y");
-}
-y = 510;
-if (x == y) {
-    console.log("X é igual a Y");
-}
-else if (x != y) {
-    console.log("X é diferente de Y");
-}
+console.log(x==y)
+console.log(x>=y)
+console.log(x!=y)
 
 // Questão 3
 
