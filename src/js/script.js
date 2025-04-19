@@ -46,6 +46,13 @@ else if (x != y) {
 
 //Questão 9
 
+let valor = "25.75";
+
+let convertido = parseFloat(valor);
+
+console.log("Valor convertido: ", convertido);
+
+console.log("Tipo da variável: ", typeof convertido);
 
 //Questão 5
 
