@@ -48,3 +48,13 @@ else if (x != y) {
 
 
 //Questão 5
+
+let usuario = prompt("Digite o nome de usuário: ");
+
+let senha = prompt("Digite a senha: ");
+
+if (usuario === "admin" && senha === "1234") {
+  console.log("Login realizado com sucesso!");
+} else {
+  console.log("Falha na autenticação.");
+}
