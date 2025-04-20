@@ -41,7 +41,9 @@ console.log ('classificação :' + classificacao);
 
 
 //Questão 4
-
+for (let i =1; i<= 50; i++){
+  console.log('O valor é' +i);
+}
 
 //Questão 6
 // Função para calcular a média de 7 notas
