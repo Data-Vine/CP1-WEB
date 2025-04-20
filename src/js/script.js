@@ -17,6 +17,27 @@ console.log(x>=y)
 console.log(x!=y)
 
 // Questão 3
+let peso = 70; // kg 
+let altura =1.80; // metros
+let imc= peso / (altura*altura);
+
+let classificacao = "";
+
+switch (true){
+  case (imc<18.5):
+    classificacao ="abaixo do peso";
+    break;
+  case (imc>= 18.5 && imc<=24.9):
+    classificacao = 'peso ideal';
+    break;
+  case (imc>24.9):
+    classificacao = 'acima do peso';
+    break;
+  default:
+    classificacao = 'Valor invalido';
+}
+console.log ('imc :' + imc.toFixed(2));
+console.log ('classificação :' + classificacao);
 
 
 //Questão 4
