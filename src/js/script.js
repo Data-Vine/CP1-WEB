@@ -56,10 +56,41 @@ function calcularMedia() {
   
 
 //Questão 7
+// Dados do estudante
+const student = {
+  nome: "João Paulo",
+  idade: 18,
+  curso: "Engenharia de Software",
+  ano: 2025
+};
 
+// Imprime no console (um embaixo do outro)
+console.log(`Nome: ${student.nome}\n
+  Idade: ${student.idade}\n
+  Curso: ${student.curso}\n
+  Ano: ${student.ano}`);
 
 //Questão 8
+const texto = `Tecnologia é um produto da ciência e da engenharia que envolve um conjunto
+ de instrumentos, métodos e técnicas que visam a resolução de problemas.`;
 
+ console.log(texto)
+
+// 1) Buscar a primeira posição de "em"
+const posicaoEm = texto.indexOf("em");
+console.log(`1) Primeira posição de 'em': ${posicaoEm}`);
+
+// 2) Buscar a última posição de "ia"
+const posicaoIa = texto.lastIndexOf("ia");
+console.log(`2) Última posição de 'ia': ${posicaoIa}`);
+
+// 3) Verificar se a palavra "ciência" existe no texto
+const temCiencia = texto.includes("ciência");
+console.log(`3) A palavra 'ciência' está no texto? ${temCiencia ? 'Sim' : 'Não'}`);
+
+// 4) Verificar se a palavra "métodos" existe no texto
+const temMetodos = texto.includes("métodos");
+console.log(`4) A palavra 'métodos' está no texto? ${temMetodos ? 'Sim' : 'Não'}`);
 
 //Questão 9
 
