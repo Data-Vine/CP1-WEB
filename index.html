@@ -1,14 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CP1 - Web/Dev</title>
+    <title>Exercícios CP1 - JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .output {
+            margin-top: 10px;
+            white-space: pre-line;
+            color: #333;
+        }
+        input {
+            margin: 5px 0;
+            padding: 5px;
+        }
+    </style>
 </head>
-<body style="background-color: beigec;">
-    <h1>Vinharia Agnello</h1>
-    <h3>Consultoria: DataVine</h3>
+<body>
+    <h1>Exercícios de JavaScript - CP1</h1>
 
-    <script src="src/js/script.js"></script>
+    <!-- Questão 1 -->
+    <div class="card">
+        <h2>Questão 1: Tipos de Variáveis</h2>
+        <button onclick="questao1()">Executar</button>
+        <div class="output" id="out1"></div>
+    </div>
+
+    <!-- Questão 2 -->
+    <div class="card">
+        <h2>Questão 2: Operadores</h2>
+        <label>Valor A: <input id="a" type="number"></label><br>
+        <label>Valor B: <input id="b" type="number"></label><br>
+        <button onclick="questao2()">Comparar</button>
+        <div class="output" id="out2"></div>
+    </div>
+
+    <!-- Questão 3 -->
+    <div class="card">
+        <h2>Questão 3: IMC</h2>
+        <label>Peso (kg): <input id="peso" type="number" step="0.1"></label><br>
+        <label>Altura (m): <input id="altura" type="number" step="0.01"></label><br>
+        <button onclick="questao3()">Calcular IMC</button>
+        <div class="output" id="out3"></div>
+    </div>
+
+    <!-- Questão 4 -->
+    <div class="card">
+        <h2>Questão 4: Repetição até 50</h2>
+        <button onclick="questao4()">Repetir</button>
+        <div class="output" id="out4"></div>
+    </div>
+
+    <!-- Questão 5 -->
+    <div class="card">
+        <h2>Questão 5: Login</h2>
+        <label>Usuário: <input id="usuario" type="text"></label><br>
+        <label>Senha: <input id="senha" type="password"></label><br>
+        <button onclick="questao5()">Entrar</button>
+        <div class="output" id="out5"></div>
+    </div>
+
+    <!-- Questão 6 -->
+    <div class="card">
+        <h2>Questão 6: Média de 7 Notas</h2>
+        <div id="notasInputs"></div>
+        <button onclick="questao6()">Calcular Média</button>
+        <div class="output" id="out6"></div>
+    </div>
+
+    <!-- Questão 7 -->
+    <div class="card">
+        <h2>Questão 7: Dados Pessoais</h2>
+        <label>Nome: <input id="nome" type="text"></label><br>
+        <label>Idade: <input id="idade" type="number"></label><br>
+        <label>Curso: <input id="curso" type="text"></label><br>
+        <label>Ano: <input id="ano" type="number"></label><br>
+        <button onclick="questao7()">Mostrar Dados</button>
+        <div class="output" id="out7"></div>
+    </div>
+
+    <!-- Questão 8 -->
+    <div class="card">
+        <h2>Questão 8: Buscas no Texto</h2>
+        <button onclick="questao8()">Executar</button>
+        <div class="output" id="out8"></div>
+    </div>
+
+    <!-- Questão 9 -->
+    <div class="card">
+        <h2>Questão 9: Conversão de String</h2>
+        <label>Valor em texto: <input id="valorStr" type="text" value="10.5"></label><br>
+        <button onclick="questao9()">Converter</button>
+        <div class="output" id="out9"></div>
+    </div>
+
+    <script>
+        function questao1() {
+            let indefinida;
+            let vazia = "";
+            let valor = 10;
+            document.getElementById("out1").innerText = `Indefinida: ${indefinida}\nVazia: '${vazia}'\nCom valor: ${valor}`;
+        }
+
+        function questao2() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let resultado = `a != b: ${a != b}\na == b: ${a == b}\na >= b: ${a >= b}`;
+            document.getElementById("out2").innerText = resultado;
+        }
+
+        function questao3() {
+            let peso = parseFloat(document.getElementById("peso").value);
+            let altura = parseFloat(document.getElementById("altura").value);
+            let imc = peso / (altura * altura);
+            let resultado = "";
+
+            switch (true) {
+                case (imc < 18.5): resultado = "Abaixo do peso"; break;
+                case (imc <= 24.9): resultado = "Peso ideal"; break;
+                default: resultado = "Acima do peso";
+            }
+            document.getElementById("out3").innerText = `IMC: ${imc.toFixed(2)}\nResultado: ${resultado}`;
+        }
+
+        function questao4() {
+            let texto = "";
+            for (let i = 1; i <= 50; i++) {
+                texto += `Repetição número: ${i}\n`;
+            }
+            document.getElementById("out4").innerText = texto;
+        }
+
+        function questao5() {
+            let usuario = document.getElementById("usuario").value;
+            let senha = document.getElementById("senha").value;
+            let mensagem = (usuario === "admin" && senha === "1234") ? "Login realizado com sucesso!" : "Falha na autenticação.";
+            document.getElementById("out5").innerText = mensagem;
+        }
+
+        function questao6() {
+            let soma = 0;
+            for (let i = 1; i <= 7; i++) {
+                let nota = parseFloat(document.getElementById("nota" + i).value);
+                if (isNaN(nota)) {
+                    document.getElementById("out6").innerText = "Digite todas as notas corretamente.";
+                    return;
+                }
+                soma += nota;
+            }
+            let media = soma / 7;
+            let resultado = media >= 6 ? "Aprovado" : "Reprovado";
+            document.getElementById("out6").innerText = `${resultado} com média: ${media.toFixed(2)}`;
+        }
+
+        function questao7() {
+            let nome = document.getElementById("nome").value;
+            let idade = document.getElementById("idade").value;
+            let curso = document.getElementById("curso").value;
+            let ano = document.getElementById("ano").value;
+            document.getElementById("out7").innerText = `${nome}\n${idade}\n${curso}\n${ano}`;
+        }
+
+        function questao8() {
+            let texto = "Tecnologia é um produto da ciência e da engenharia que envolve um conjunto de instrumentos, métodos e técnicas que visam a resolução de problemas.";
+            let posEm = texto.indexOf("em");
+            let ultIa = texto.lastIndexOf("ia");
+            let contemCiencia = texto.includes("ciência") ? "Sim" : "Não";
+            let contemMetodos = texto.includes("métodos") ? "Sim" : "Não";
+
+            document.getElementById("out8").innerText = `Posição de 'em': ${posEm}\nÚltima posição de 'ia': ${ultIa}\nContém 'ciência'? ${contemCiencia}\nContém 'métodos'? ${contemMetodos}`;
+        }
+
+        function questao9() {
+            let valor = document.getElementById("valorStr").value;
+            let convertido = parseFloat(valor);
+            let tipo = typeof convertido;
+            document.getElementById("out9").innerText = `String original: ${valor}\nConvertido para float: ${convertido}\nTipo: ${tipo}`;
+        }
+
+        // Criar inputs para notas dinamicamente ao carregar
+        window.onload = function () {
+            let container = document.getElementById("notasInputs");
+            for (let i = 1; i <= 7; i++) {
+                let input = document.createElement("input");
+                input.type = "number";
+                input.step = "0.1";
+                input.id = "nota" + i;
+                input.placeholder = `Nota ${i}`;
+                container.appendChild(input);
+                container.appendChild(document.createElement("br"));
+            }
+        }
+    </script>
 </body>
 </html>
