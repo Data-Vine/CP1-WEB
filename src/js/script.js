@@ -58,26 +58,35 @@ function questao5() {
 }
 
 // //Questão 6
-  function questao6() {
+function calcularMedia() {
+    const notas = [];
     let soma = 0;
+  
+    // Coleta as 7 notas
     for (let i = 1; i <= 7; i++) {
-        let nota = parseFloat(document.getElementById("nota" + i).value);
-        if (isNaN(nota)) {
-            document.getElementById("out6").innerText = "Digite todas as notas corretamente.";
-            return;
-        }
-        soma += nota;
-    }
-    let media = soma / 7;
-    let resultado = media >= 6 ? "Aprovado" : "Reprovado";
-    document.getElementById("out6").innerText = `${resultado} com média: ${media.toFixed(2)}`;
-    console.log(`Média: ${media.toFixed(2)}`);
-    if (media >= 6) {
-        console.log("Resultado: Aprovado 🎉");
-      } else {
-        console.log("Resultado: Reprovado 😞");
+      const nota = parseFloat(prompt(`Digite a nota ${i}:`));
+      if (isNaN(nota) || nota < 0 || nota > 10) {
+        console.log("Nota inválida! Digite um valor entre 0 e 10.");
+        return;
       }
-}
+      notas.push(nota);
+      soma += nota;
+    }
+  
+    // Calcula a média
+    const media = soma / notas.length;
+  
+    // Exibe a média e a situação do aluno
+    console.log(`\nMédia do aluno: ${media.toFixed(2)}`);
+    if (media >= 6) {
+      console.log("Resultado: Aprovado 🎉");
+    } else {
+      console.log("Resultado: Reprovado 😞");
+    }
+  }
+  
+  // Chama a função para executar
+  calcularMedia();
 
 //Questão 7
 function questao7() {
