@@ -17,28 +17,26 @@ console.log(x>=y)
 console.log(x!=y)
 
 // Questão 3
-let peso = 70; // kg 
-let altura =1.80; // metros
-let imc= peso / (altura*altura);
+function questao3() {
+  let peso = parseFloat(document.getElementById("peso").value);
+  let altura = parseFloat(document.getElementById("altura").value);
 
-let classificacao = "";
+  if (isNaN(peso) || isNaN(altura) || altura <= 0) {
+      document.getElementById("out3").innerText = "Por favor, insira valores válidos para peso e altura.";
+      return;
+  }
 
-switch (true){
-  case (imc<18.5):
-    classificacao ="abaixo do peso";
-    break;
-  case (imc>= 18.5 && imc<=24.9):
-    classificacao = 'peso ideal';
-    break;
-  case (imc>24.9):
-    classificacao = 'acima do peso';
-    break;
-  default:
-    classificacao = 'Valor invalido';
+  let imc = peso / (altura * altura);
+  let resultado = "";
+
+  switch (true) {
+      case (imc < 18.5): resultado = "Abaixo do peso"; break;
+      case (imc <= 24.9): resultado = "Peso ideal"; break;
+      default: resultado = "Acima do peso";
+  }
+
+  document.getElementById("out3").innerText = `IMC: ${imc.toFixed(2)}\nResultado: ${resultado}`;
 }
-console.log ('imc :' + imc.toFixed(2));
-console.log ('classificação :' + classificacao);
-
 
 //Questão 4
 for (let i =1; i<= 50; i++){
